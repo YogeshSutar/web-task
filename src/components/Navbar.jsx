@@ -35,8 +35,10 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed w-full z-50 flex justify-between px-6 md:px-[60px] transition-all duration-300 ${
-        isScrolled ? "bg-white shadow-md py-4 " : "bg-transparent py-6 top-3"
+      className={`fixed w-full z-50 flex justify-between px-5 md:px-[60px] transition-all duration-300 ${
+        isScrolled
+          ? "bg-white shadow-md py-4 md:px-[20px]"
+          : "bg-transparent py-6 top-3"
       }`}
     >
       <div className="flex items-center">
@@ -44,7 +46,9 @@ const Navbar = () => {
           src={logo}
           alt="Logo"
           className={`transition-all duration-300 ${
-            isScrolled ? "h-10" : "h-10 sm:h-[50px] md:h-[70px] lg:h-[110px]"
+            isScrolled
+              ? "h-12 w-auto"
+              : "h-12 sm:h-[50px] md:h-[70px] lg:h-[110px] w-auto"
           }`}
         />
       </div>

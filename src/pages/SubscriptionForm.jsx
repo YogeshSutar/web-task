@@ -18,7 +18,7 @@ const SubscriptionForm = () => {
   return (
     <div className="relative flex flex-col lg:flex-row w-full  h-auto lg:h-screen">
       <div
-        className="lg:w-[70%] w-full h-[55vh] md:h-[40vh] lg:h-[100%] bg-cover bg-center relative before:absolute before:inset-0 before:bg-black/55"
+        className="lg:w-[70%] w-full h-[75vh] md:h-[40vh] lg:h-[100%] bg-cover bg-center relative before:absolute before:inset-0 before:bg-black/55"
         style={{ backgroundImage: `url(${bgImage})` }}
       >
         <div className="absolute p-6 lg:p-7 lg:pt-8 text-white flex flex-col w-full lg:w-[70%]">
@@ -61,7 +61,7 @@ const SubscriptionForm = () => {
         </div>
       </div>
 
-      <div className="lg:absolute static right-4 md:top-8 lg:top-7 w-full lg:w-[50%] lg:h-[88%] bg-white p-6 ">
+      <div className="lg:absolute static right-4 md:top-8 lg:top-7 w-full lg:w-[50%] lg:h-[90%] bg-white p-6 ">
         <div className="flex flex-col md:flex-row gap-x-6 gap-y-4 md:mb-2">
           <div
             className={`flex-1 p-4 border cursor-pointer flex items-center space-x-4 transition-all duration-300 ${
