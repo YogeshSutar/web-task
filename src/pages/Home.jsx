@@ -3,7 +3,7 @@ import HomeImage from "../assets/Layer 132.png";
 
 const Home = () => {
   return (
-    <section className="relative pt-16 pb-0">
+    <section className="relative pt-16 pb-0" id="home">
       <div className="mx-auto flex flex-col md:flex-row items-center justify-between lg:px-[60px] px-4 sm:px-8">
         <div className="w-full md:w-[50%] mt-16 md:mt-18 text-center md:text-left">
           <h1 className="mt-10 text-2xl md:text-2xl lg:text-4xl font-bold text-gray-900 leading-snug font-oswald">

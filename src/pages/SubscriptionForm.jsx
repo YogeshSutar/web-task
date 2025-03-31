@@ -22,7 +22,10 @@ const SubscriptionForm = () => {
         style={{ backgroundImage: `url(${bgImage})` }}
       >
         <div className="absolute p-6 lg:p-7 lg:pt-8 text-white flex flex-col w-full lg:w-[70%]">
-          <h2 className="text-2xl lg:text-3xl font-medium transform scale-y-150">
+          <h2
+            id="subscription"
+            className="text-2xl lg:text-3xl font-medium transform scale-y-150"
+          >
             Subscription
           </h2>
           <p className="mt-5 lg:mt-10 text-sm lg:text-base text-justify tracking-[0.5px]">

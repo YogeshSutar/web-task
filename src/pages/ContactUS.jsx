@@ -5,7 +5,7 @@ import { HiMail } from "react-icons/hi";
 
 const ContactUS = () => {
   return (
-    <div className="">
+    <div className="" id="contact">
       <div className="flex flex-col lg:flex-row py-20 relative overflow-hidden">
         <div className="hidden lg:block md:block sm:hidden relative overflow-hidden px-5">
           <img

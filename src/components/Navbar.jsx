@@ -3,6 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { logout } from "../Redux/slice/userSlice";
 import logo from "../assets/Layer 133.png";
+import { Link } from "react-scroll";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -10,13 +11,13 @@ const Navbar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const navData = [
-    { name: "Home", path: "/" },
-    { name: "About Us", path: "/about" },
-    { name: "Our Package", path: "/packages" },
-    { name: "Subscription", path: "/subscription" },
-    { name: "Contact", path: "/contact" },
-    { name: "Profile", path: "/dashboard/profile" },
-    { name: "Logout", path: "#" },
+    { id: "home", name: "Home", path: "/" },
+    { id: "about", name: "About Us", path: "/about" },
+    { id: "packages", name: "Our Package", path: "/packages" },
+    { id: "subscription", name: "Subscription", path: "/subscription" },
+    { id: "contact", name: "Contact", path: "/contact" },
+    { id: "profile", name: "Profile", path: "/dashboard/profile" },
+    { id: "logout", name: "Logout", path: "#" },
   ];
 
   useEffect(() => {
@@ -55,25 +56,36 @@ const Navbar = () => {
 
       <ul className="hidden md:flex space-x-10 text-base font-semibold font-nunito">
         {navData.map((item) =>
-          item.name === "Logout" ? (
-            <li key={item.name}>
-              <button
-                className="hover:text-red-600 cursor-pointer"
-                onClick={handleLogout}
-              >
-                {item.name}
-              </button>
+          item.id === "profile" || item.id === "logout" ? (
+            <li key={item.id}>
+              {item.id === "logout" ? (
+                <button
+                  className="hover:text-red-600 cursor-pointer"
+                  onClick={handleLogout}
+                >
+                  {item.name}
+                </button>
+              ) : (
+                <NavLink
+                  to={item.path}
+                  className={({ isActive }) =>
+                    isActive ? "text-red-600 font-bold" : "hover:text-red-600"
+                  }
+                >
+                  {item.name}
+                </NavLink>
+              )}
             </li>
           ) : (
-            <li key={item.name}>
-              <NavLink
-                to={item.path}
-                className={({ isActive }) =>
-                  isActive ? "text-red-600 font-bold" : "hover:text-red-600"
-                }
+            <li key={item.id}>
+              <Link
+                to={item.id}
+                smooth={true}
+                duration={500}
+                className="cursor-pointer hover:text-red-600"
               >
                 {item.name}
-              </NavLink>
+              </Link>
             </li>
           )
         )}
@@ -90,27 +102,39 @@ const Navbar = () => {
         <div className="absolute top-full left-0 w-full bg-white shadow-lg md:hidden">
           <ul className="flex flex-col space-y-4 py-6 px-6 text-lg font-bold">
             {navData.map((item) =>
-              item.name === "Logout" ? (
-                <li key={item.name}>
-                  <button
-                    className="block text-gray-800 hover:text-red-600"
-                    onClick={() => {
-                      setIsMenuOpen(false);
-                      handleLogout();
-                    }}
-                  >
-                    {item.name}
-                  </button>
+              item.id === "profile" || item.id === "logout" ? (
+                <li key={item.id}>
+                  {item.id === "logout" ? (
+                    <button
+                      className="block text-gray-800 hover:text-red-600"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        handleLogout();
+                      }}
+                    >
+                      {item.name}
+                    </button>
+                  ) : (
+                    <NavLink
+                      to={item.path}
+                      className="block text-gray-800 hover:text-red-600"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {item.name}
+                    </NavLink>
+                  )}
                 </li>
               ) : (
-                <li key={item.name}>
-                  <NavLink
-                    to={item.path}
+                <li key={item.id}>
+                  <Link
+                    to={item.id}
+                    smooth={true}
+                    duration={500}
                     className="block text-gray-800 hover:text-red-600"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.name}
-                  </NavLink>
+                  </Link>
                 </li>
               )
             )}

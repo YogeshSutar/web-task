@@ -51,7 +51,7 @@ const features = [
 
 const Packages = () => {
   return (
-    <section className="py-16 px-6 sm:bg-white">
+    <section className="py-16 px-6 sm:bg-white" id="packages">
       <h2 className="text-2xl lg:text-3xl font-bold text-center mb-6 font-oswald scale-y-[1.3]">
         Our Package
       </h2>

@@ -29,7 +29,7 @@ const features = [
 
 const AboutUs = () => {
   return (
-    <section className="relative top-4">
+    <section className="relative top-4" id="about">
       <div className="bg-red-600 text-white py-14 text-center px-4 sm:px-6">
         <div className="container mx-auto mb-16 sm:mb-20">
           <h2 className="lg:text-3xl text-2xl font-bold mb-4 font-oswald">
