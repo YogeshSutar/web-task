@@ -54,19 +54,16 @@ const SignUp = () => {
       return "All fields are required.";
     }
 
-    // Validate Email Format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       return "Invalid email format.";
     }
 
-    // Validate Mobile Number (10 Digits)
     const phoneRegex = /^[6-9]\d{9}$/;
     if (!phoneRegex.test(mobileno)) {
       return "Invalid mobile number.";
     }
 
-    // Validate Password Strength
     if (password.length < 6) {
       return "Password must be at least 6 characters.";
     }
@@ -75,7 +72,6 @@ const SignUp = () => {
       return "Passwords do not match.";
     }
 
-    // Check if username already exists
     const userExists = users.some((user) => user.username === username);
     if (userExists) {
       return "Username already exists. Please use a different one.";
