@@ -16,14 +16,14 @@ const Home = () => {
           </p>
 
           <div className="mt-4 lg:mt-6 flex gap-4 justify-center md:justify-start">
-            <a href="http://yogesh-sutar-web.netlify.app/">
+            <a href="https://www.apple.com/in/app-store/">
               <img
                 src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
                 alt="App Store"
                 className="h-10 sm:h-14 w-auto"
               />
             </a>
-            <a href="http://yogesh-sutar-web.netlify.app/">
+            <a href="https://play.google.com/store/games?hl=en_IN">
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
                 alt="Google Play"
